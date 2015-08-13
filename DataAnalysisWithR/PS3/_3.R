@@ -29,3 +29,8 @@ nrow(subset(diamonds,price<250))
 nrow(subset(diamonds,price>=15000))
 ##############################
 
+#Explore the peak price point
+plot <- ggplot(data = diamonds, aes(x=price, color="price")) +
+  geom_histogram(binwidth=5) +
+  scale_x_continuous(limits = c(500,750), breaks =c(500,600,700,750))
+ggsave(plot,filename = 'PS3.png')
